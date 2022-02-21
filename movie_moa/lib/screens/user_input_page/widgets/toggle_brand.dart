@@ -25,7 +25,9 @@ class _ToggleBrandState extends State<ToggleBrand> {
                   RichText(
                     text: TextSpan(
                       children: [
-                        TextSpan(text: '     CGV   '),
+                        TextSpan(
+                            text: '     CGV   ',
+                            style: TextStyle(color: Colors.black)),
                         WidgetSpan(
                           child: Padding(
                             padding:
@@ -40,7 +42,9 @@ class _ToggleBrandState extends State<ToggleBrand> {
                   RichText(
                     text: TextSpan(
                       children: [
-                        TextSpan(text: '     Lotte Cinema    '),
+                        TextSpan(
+                            text: '     Lotte Cinema    ',
+                            style: TextStyle(color: Colors.black)),
                         WidgetSpan(
                           child: Padding(
                             padding:
@@ -55,7 +59,9 @@ class _ToggleBrandState extends State<ToggleBrand> {
                   RichText(
                     text: TextSpan(
                       children: [
-                        TextSpan(text: '      Mega box    '),
+                        TextSpan(
+                            text: '      Mega box    ',
+                            style: TextStyle(color: Colors.black)),
                         WidgetSpan(
                           child: Padding(
                               padding:

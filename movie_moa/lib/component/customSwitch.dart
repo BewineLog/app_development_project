@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:movie_moa/screens/home/widgets/grey_grid.dart';
-import 'package:movie_moa/screens/user_input_page/user_input_page.dart';
 
 class CustomSwitch extends StatefulWidget {
   CustomSwitch(

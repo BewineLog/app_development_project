@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:movie_moa/component/variable.dart';
 import 'package:movie_moa/constants/colors.dart';
 import 'package:movie_moa/screens/home/widgets/grey_grid.dart';
 import 'package:movie_moa/screens/search_screen/location_input.dart';
@@ -9,7 +8,6 @@ import 'package:movie_moa/screens/user_input_page/widgets/confirm_button.dart';
 import 'package:movie_moa/screens/user_input_page/widgets/option_selection.dart';
 import 'package:movie_moa/screens/user_view_page/widgets/upper_title.dart';
 import 'package:movie_moa/widgets/app_bar.dart';
-import 'package:movie_moa/component/toggleSwitch.dart';
 
 class userInputPage extends StatefulWidget {
   const userInputPage({Key? key}) : super(key: key);
@@ -65,7 +63,7 @@ class _userInputPageState extends State<userInputPage> {
                 //  EdgeInsets.fromLTRB(0, height * 0.01, 0, height * 0.01),
                 child: Stack(
                   children: [
-                    LocationInput(),
+                    LocationInput(), //현재 장소 입력받는 함수.
                   ],
                 ),
               ),

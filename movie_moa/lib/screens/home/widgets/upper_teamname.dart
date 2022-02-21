@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:movie_moa/constants/colors.dart';
-import 'package:movie_moa/screens/home/widgets/grey_grid.dart';
 
 class Upper_TeamName extends StatelessWidget {
   const Upper_TeamName({Key? key}) : super(key: key);

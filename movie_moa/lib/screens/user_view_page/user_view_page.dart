@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:movie_moa/constants/colors.dart';
-import 'package:movie_moa/screens/home/home.dart';
 import 'package:movie_moa/screens/home/widgets/grey_grid.dart';
 import 'package:movie_moa/screens/user_view_page/widgets/find_more_info.dart';
 import 'package:movie_moa/screens/user_view_page/widgets/options.dart';

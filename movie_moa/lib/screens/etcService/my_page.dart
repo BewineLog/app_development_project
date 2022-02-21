@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:movie_moa/screens/etcService/login_page/login_page.dart';
 import 'package:movie_moa/screens/etcService/widgets/profile_bar.dart';
 
 class MyPage extends StatelessWidget {

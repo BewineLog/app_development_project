@@ -1,10 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:movie_moa/component/variable.dart';
-import 'package:movie_moa/screens/etcService/login_success_page/login_success_page.dart';
-
 import 'package:movie_moa/screens/etcService/my_page.dart';
-
 import 'package:movie_moa/screens/home/widgets/home_service.dart';
 
 class HomePage extends StatefulWidget {
@@ -15,8 +11,8 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  int screenIndex = 0;
   // List<Widget> screenList = [Text('Home'), Text('MyPage')];
+  CupertinoTabController controller = CupertinoTabController();
 
   @override
   Widget build(BuildContext context) {
@@ -35,6 +31,7 @@ class _HomePageState extends State<HomePage> {
       ),
       tabBuilder: (context, index) {
         Widget page;
+
         switch (index) {
           case 0:
             page = CupertinoTabView(
@@ -48,8 +45,7 @@ class _HomePageState extends State<HomePage> {
           case 1:
             page = CupertinoTabView(
               builder: (context) {
-                return CupertinoPageScaffold(
-                    child: loginSuccessScreen()); /*마이페이지 창으로 이동*/
+                return CupertinoPageScaffold(child: MyPage()); /*마이페이지 창으로 이동*/
               },
             );
             break;

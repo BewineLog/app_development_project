@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:movie_moa/component/rounded_input_field.dart';
 import 'package:movie_moa/component/variable.dart';
-import 'package:movie_moa/constants/colors.dart';
 
 class LocationInput extends StatefulWidget {
   const LocationInput({Key? key}) : super(key: key);

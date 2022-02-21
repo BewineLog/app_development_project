@@ -39,7 +39,7 @@ class profileBar extends StatelessWidget {
 
 Widget _buildIcon(IconData icon) {
   return Container(
-    padding: EdgeInsets.all(15),
+    padding: EdgeInsets.all(12),
     decoration: BoxDecoration(
         shape: BoxShape.circle,
         color: Colors.white,

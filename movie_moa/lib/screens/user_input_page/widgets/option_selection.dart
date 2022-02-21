@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:movie_moa/component/rounded_input_field.dart';
-import 'package:movie_moa/constants/colors.dart';
-import 'package:movie_moa/screens/home/widgets/grey_grid.dart';
 
 class Option_Selection extends StatelessWidget {
   // const Option_Selection({Key? key}) : super(key: key);
-  
+
   final String hintText;
   final Icon icon;
   final ValueChanged<String> onChanged;

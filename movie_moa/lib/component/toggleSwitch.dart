@@ -25,7 +25,9 @@ class _ToggleSwitchState extends State<ToggleSwitch> {
                   RichText(
                     text: TextSpan(
                       children: [
-                        TextSpan(text: '      영화    '),
+                        TextSpan(
+                            text: '      영화    ',
+                            style: TextStyle(color: Colors.black)),
                         WidgetSpan(
                           child: Padding(
                             padding:
@@ -40,7 +42,9 @@ class _ToggleSwitchState extends State<ToggleSwitch> {
                   RichText(
                     text: TextSpan(
                       children: [
-                        TextSpan(text: '      장소    '),
+                        TextSpan(
+                            text: '      장소    ',
+                            style: TextStyle(color: Colors.black)),
                         WidgetSpan(
                           child: Padding(
                             padding:
@@ -55,7 +59,9 @@ class _ToggleSwitchState extends State<ToggleSwitch> {
                   RichText(
                     text: TextSpan(
                       children: [
-                        TextSpan(text: '      시간    '),
+                        TextSpan(
+                            text: '      시간    ',
+                            style: TextStyle(color: Colors.black)),
                         WidgetSpan(
                           child: Padding(
                               padding:
