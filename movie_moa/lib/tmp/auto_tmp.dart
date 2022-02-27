@@ -6,16 +6,16 @@ import 'package:movie_moa/component/variable.dart';
 import 'package:movie_moa/constants/colors.dart';
 import 'package:substring_highlight/substring_highlight.dart';
 
-class SearchFunctionT extends StatefulWidget {
-  SearchFunctionT({Key? key, required this.hintText}) : super(key: key);
+class SearchFunction extends StatefulWidget {
+  SearchFunction({Key? key, required this.hintText}) : super(key: key);
 
   final String hintText;
 
   @override
-  _SearchFunctionTState createState() => _SearchFunctionTState();
+  _SearchFunctionState createState() => _SearchFunctionState();
 }
 
-class _SearchFunctionTState extends State<SearchFunctionT> {
+class _SearchFunctionState extends State<SearchFunction> {
   bool isLoading = false;
   late List<String> autoCompleteData;
   late TextEditingController controller;
