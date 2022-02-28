@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:movie_moa/component/variable.dart';
 import 'package:movie_moa/constants/colors.dart';
-import 'package:movie_moa/screens/etcService/login_page/login_page.dart';
-import 'package:movie_moa/screens/etcService/login_success_page/login_success_page.dart';
 
 class profileBar extends StatelessWidget {
   dynamic page;
@@ -25,11 +22,8 @@ class profileBar extends StatelessWidget {
           ),
         ),
         GestureDetector(
-            onTap: () => (id_check && passwd_check)
-                ? Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => loginSuccessScreen()))
-                : Navigator.of(context).push(
-                    MaterialPageRoute(builder: (context) => LoginScreen())),
+            onTap: () => Navigator.of(context)
+                .push(MaterialPageRoute(builder: (context) => page)),
             child: Icon(Icons
                 .keyboard_arrow_right_outlined)), /* 마이페이지 로그인 전 > 버튼 누르면 로그인 창으로 이동 */
       ],

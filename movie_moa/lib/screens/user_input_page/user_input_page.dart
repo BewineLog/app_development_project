@@ -1,26 +1,30 @@
 import 'package:flutter/material.dart';
 import 'package:movie_moa/constants/colors.dart';
 import 'package:movie_moa/screens/home/widgets/grey_grid.dart';
-import 'package:movie_moa/screens/search_screen/location_input.dart';
-import 'package:movie_moa/screens/search_screen/movie_autocomplete.dart';
-import 'package:movie_moa/screens/user_input_page/widgets/toggle_brand.dart';
-import 'package:movie_moa/screens/user_input_page/widgets/confirm_button.dart';
-import 'package:movie_moa/screens/user_input_page/widgets/option_selection.dart';
+import 'package:movie_moa/screens/search_screen/search_object_list.dart';
+// import 'package:movie_moa/screens/user_input_page/widgets/toggle_brand.dart';
+// import 'package:movie_moa/screens/user_input_page/widgets/confirm_button.dart';
+import 'package:movie_moa/screens/user_view_page/user_view_page.dart';
 import 'package:movie_moa/screens/user_view_page/widgets/upper_title.dart';
 import 'package:movie_moa/widgets/app_bar.dart';
 
 class userInputPage extends StatefulWidget {
-  const userInputPage({Key? key}) : super(key: key);
+  List<bool> option;
+  userInputPage({Key? key, required this.option}) : super(key: key);
 
   @override
   _userInputPageState createState() => _userInputPageState();
 }
 
 class _userInputPageState extends State<userInputPage> {
-  late String _selectedTime;
+  double count = 0;
+  late String _selectedTime1;
+  late String _selectedTime2;
+  final List<bool> _selections = List.generate(3, (index) => false);
   @override
   void initState() {
-    _selectedTime = '00시 00분';
+    _selectedTime1 = '시간을 설정해주세요';
+    _selectedTime2 = '시간을 설정해주세요';
   }
 
   @override
@@ -28,7 +32,7 @@ class _userInputPageState extends State<userInputPage> {
     final data = MediaQuery.of(context);
     final width = data.size.width;
     final height = data.size.height;
-    double count = 0;
+    
     return Scaffold(
       backgroundColor: kBackgroundColor,
       body: Column(
@@ -59,44 +63,43 @@ class _userInputPageState extends State<userInputPage> {
               Container(
                 height: height * 0.115,
                 width: width,
-                //padding:
-                //  EdgeInsets.fromLTRB(0, height * 0.01, 0, height * 0.01),
                 child: Stack(
                   children: [
+<<<<<<< HEAD
                     LocationInput(), //현재 장소 입력받는 함수.
+=======
+                    SearchFunction(
+                      hintText: "선호하는 장소 검색",
+                    ),
+>>>>>>> fc55121a54fc54402a53f0afc2c5211ad9af99d9
                   ],
                 ),
               ),
               grey_grid(),
               SizedBox(height: height * 0.03),
-              Option_Selection(
-                hintText:
-                    "현재 설정된 시각은 $_selectedTime 입니다. \n 시간을 변경하려면 아래 아이콘을 눌러주세요.",
-                icon: Icon(Icons.access_time_outlined),
-                onChanged: (value) {},
-              ),
+              // Text(widget.option.toString()),
               ElevatedButton(
-                // child: Icon(Icons.timer),
                 child: RichText(
-                  text: TextSpan(
-                    children: [
-                      TextSpan(text: '시간을 변경하시려면 눌러주세요    '),
-                      WidgetSpan(
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 2.0),
-                          child: Icon(Icons.timer),
+                    text: TextSpan(
+                      children: [
+                        TextSpan(text: ''),
+                        WidgetSpan(
+                          child: Padding(
+                            padding:
+                                const EdgeInsets.symmetric(horizontal: 2.0),
+                            child: Icon(Icons.timer),
+                          ),
                         ),
-                      ),
-                      TextSpan(text: ''),
-                    ],
+                        TextSpan(text: '   $_selectedTime1'),
+                      ],
+                    ),
                   ),
-                ),
                 style: ElevatedButton.styleFrom(
                   primary: Colors.white,
                   onPrimary: Colors.black,
                 ),
                 onPressed: () {
-                  Future<TimeOfDay?> selectedTime = showTimePicker(
+                  Future<TimeOfDay?> selectedTime1 = showTimePicker(
                     context: context,
                     initialTime: TimeOfDay.now(),
                     builder: (context, child) {
@@ -115,18 +118,82 @@ class _userInputPageState extends State<userInputPage> {
                       );
                     },
                   );
-                  selectedTime.then((timeOfDay) {
+                  selectedTime1.then((timeOfDay) {
                     setState(() {
                       // _selectedTime = '${timeOfDay?.hour}시  ${timeOfDay?.minute}분';
-                      if (timeOfDay?.minute == 0) {
-                        _selectedTime =
-                            '${timeOfDay?.hour}시 ${timeOfDay?.minute}0분';
+                      if (timeOfDay?.minute == null || timeOfDay?.hour == null) {
+                        _selectedTime1 = '(시간을 설정해주세요)';
+                      } else if (timeOfDay?.minute == 0) {
+                        _selectedTime1 =
+                            '${timeOfDay?.hour}시 ${timeOfDay?.minute}0분 부터';
                       } else if (timeOfDay?.hour == 0) {
-                        _selectedTime =
-                            '${timeOfDay?.hour}0시 ${timeOfDay?.minute}분';
+                        _selectedTime1 = 
+                        '${timeOfDay?.hour}0시 ${timeOfDay?.minute}분 부터';
                       } else {
-                        _selectedTime =
-                            '${timeOfDay?.hour}시 ${timeOfDay?.minute}분';
+                        _selectedTime1 =
+                            '${timeOfDay?.hour}시 ${timeOfDay?.minute}분 부터';
+                      }
+                    });
+                  });
+                },
+              ),
+              ElevatedButton(
+                child: RichText(
+                    text: TextSpan(
+                      children: [
+                        TextSpan(text: ''),
+                        WidgetSpan(
+                          child: Padding(
+                            padding:
+                                const EdgeInsets.symmetric(horizontal: 2.0),
+                            child: Icon(Icons.timer),
+                          ),
+                        ),
+                        TextSpan(text: '   $_selectedTime2'),
+                      ],
+                    ),
+                  ),
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.white,
+                  onPrimary: Colors.black,
+                ),
+                onPressed: () {
+                  Future<TimeOfDay?> selectedTime2 = showTimePicker(
+                    context: context,
+                    initialTime: TimeOfDay.now(),
+                    builder: (context, child) {
+                      return Theme(
+                        data: ThemeData.light().copyWith(
+                          colorScheme: ColorScheme.light(
+                            primary: Color.fromARGB(255, 221, 88, 190),
+                            onSurface: Color.fromARGB(255, 214, 132, 170),
+                          ),
+                          buttonTheme: ButtonThemeData(
+                            colorScheme:
+                                ColorScheme.light(primary: Colors.black),
+                          ),
+                        ),
+                        child: child!,
+                      );
+                    },
+                  );
+                  selectedTime2.then((timeOfDay) {
+                    setState(() {
+                      // _selectedTime = '${timeOfDay?.hour}시  ${timeOfDay?.minute}분';
+                      
+                       if (timeOfDay?.minute == null || timeOfDay?.hour == null) {
+                        _selectedTime2 = '(시간을 설정해주세요)';
+                      } else if (_selectedTime1 == _selectedTime2) {
+                        _selectedTime2 = '(시간을 다시 설정해주세요)';
+                      } else if (timeOfDay?.minute == 0) {
+                        _selectedTime2 =
+                            '${timeOfDay?.hour}시 ${timeOfDay?.minute}0분 까지';
+                      } else if (timeOfDay?.hour == 0) {
+                        _selectedTime2 = 
+                        '${timeOfDay?.hour}0시 ${timeOfDay?.minute}분 까지';
+                      } else {
+                        _selectedTime2 =
+                            '${timeOfDay?.hour}시 ${timeOfDay?.minute}분 까지';
                       }
                     });
                   });
@@ -134,34 +201,116 @@ class _userInputPageState extends State<userInputPage> {
               ),
               SizedBox(height: height * 0.04),
               Container(
-                  alignment: Alignment.bottomLeft,
-                  child: Text('Cinema setting (Multiple selection possible)')),
+              alignment: Alignment.bottomLeft,
+              child: Text('Cinema setting (Multiple selection possible)')),
               grey_grid(),
-              Container(
-                child: ToggleBrand(),
+              // ToggleBrand(),
+              ToggleButtons(
+                children: <Widget>[
+                  RichText(
+                    text: TextSpan(
+                      children: [
+                        TextSpan(text: '     CGV   '),
+                        WidgetSpan(
+                          child: Padding(
+                            padding:
+                                const EdgeInsets.symmetric(horizontal: 2.0),
+                            child: Icon(Icons.movie),
+                          ),
+                        ),
+                        TextSpan(text: '      '),
+                      ],
+                    ),
+                  ),
+                  RichText(
+                    text: TextSpan(
+                      children: [
+                        TextSpan(text: '     Lotte Cinema    '),
+                        WidgetSpan(
+                          child: Padding(
+                            padding:
+                                const EdgeInsets.symmetric(horizontal: 2.0),
+                            child: Icon(Icons.movie),
+                          ),
+                        ),
+                        TextSpan(text: '      '),
+                      ],
+                    ),
+                  ),
+                  RichText(
+                    text: TextSpan(
+                      children: [
+                        TextSpan(text: '      Mega box    '),
+                        WidgetSpan(
+                          child: Padding(
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 2.0),
+                              child: Icon(Icons.movie)),
+                        ),
+                        TextSpan(text: '      '),
+                      ],
+                    ),
+                  ),
+                ],
+                onPressed: (int index) {
+                  setState(() {
+                    _selections[index] = !_selections[index];
+                  });
+                },
+                isSelected: _selections,
+                selectedColor: Color.fromARGB(255, 182, 126, 192),
+                hoverColor: Color.fromARGB(255, 235, 207, 216),
+                fillColor: Color.fromARGB(255, 253, 234, 253),
               ),
               SizedBox(height: height * 0.03),
               Container(
-                  alignment: Alignment.bottomLeft,
-                  child: Text('Number of pop-up lists')),
+                alignment: Alignment.bottomLeft,
+                child: Text('Number of pop-up lists')),
               grey_grid(),
               Container(
-                  alignment: Alignment.center, child: Text('< 팝업되는 리스트 개수 >')),
+                alignment: Alignment.center,
+                child: Text('< 팝업되는 리스트는 $count개입니다. >')
+              ),
               Container(
-                  alignment: Alignment.center,
-                  child: Slider(
-                    value: count.toDouble(),
-                    min: 0.0,
-                    max: 100.0,
-                    activeColor: Color.fromARGB(255, 240, 191, 207),
-                    inactiveColor: Colors.grey,
-                    onChanged: (double newValue) {
-                      count = newValue.round() as double;
-                    },
-                  )),
+                alignment: Alignment.center,
+                child: Slider(
+                  value: count,
+                  min: 0.0,
+                  max: 100.0,
+                  activeColor: Color.fromARGB(255, 240, 191, 207),
+                  inactiveColor: Colors.grey,
+                  onChanged: (value) {
+                    setState(() {
+                    count = value.toInt() as double;
+                    });
+                  }
+                )
+              ),
               grey_grid(),
               SizedBox(height: height * 0.03),
-              Confirm_Button(),
+              // Confirm_Button(),
+              RawMaterialButton(
+              child: Container(
+                alignment: Alignment.center,
+                decoration: BoxDecoration(
+                  color: Color.fromARGB(255, 229, 190, 236), //* 버튼 색상 변경
+                  borderRadius: BorderRadius.circular(width * 0.1),
+                  //shape: BoxShape.circle,
+                ),
+                margin: EdgeInsets.fromLTRB(width * 0.3, 0, width * 0.3, 0), //* 마진 변경 및 텍스트 스타일 설정
+                child: Text('Next',
+                    style: TextStyle(
+                      fontSize: height * 0.025,
+                      color: Colors.black,
+                    )),
+              ),
+              onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => User_View_Page(
+                selection: _selections, 
+                time1: _selectedTime1,
+                time2: _selectedTime2,
+                cnt: count.toInt(),
+                ))),
+            ),
             ],
           ),
         ],

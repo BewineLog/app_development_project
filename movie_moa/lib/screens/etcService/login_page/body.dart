@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:movie_moa/component/already_have_an_account.dart';
-import 'package:movie_moa/component/variable.dart';
+import 'package:movie_moa/component/login_check.dart';
 import 'package:movie_moa/component/rounded_button.dart';
 import 'package:movie_moa/component/rounded_input_field.dart';
 import 'package:movie_moa/component/rounded_password_field.dart';
@@ -12,9 +12,13 @@ import 'package:movie_moa/screens/etcService/sign_up_page/sign_up_page.dart';
 class Body extends StatelessWidget {
   String id = 'abc';
   String passwd = '1234';
+  late final bool id_check;
+  late final bool passwd_check;
 
   Body({
     Key? key,
+    required this.id_check,
+    required this.passwd_check,
   }) : super(key: key);
 
   @override

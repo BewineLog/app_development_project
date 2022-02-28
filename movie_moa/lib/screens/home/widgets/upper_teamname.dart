@@ -9,7 +9,7 @@ class Upper_TeamName extends StatelessWidget {
     final width = data.size.width;
     final height = data.size.height;
     return Container(
-      margin: EdgeInsets.only(top: width * 0.1),
+      margin: EdgeInsets.only(top: height * 0.06),
       alignment: Alignment.center,
       child: Padding(
         padding: EdgeInsets.only(left: width * 0.8),
