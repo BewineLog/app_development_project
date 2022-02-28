@@ -13,7 +13,6 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   // List<Widget> screenList = [Text('Home'), Text('MyPage')];
   CupertinoTabController controller = CupertinoTabController();
-
   @override
   Widget build(BuildContext context) {
     return CupertinoTabScaffold(
