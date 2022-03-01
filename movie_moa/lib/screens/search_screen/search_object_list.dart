@@ -27,7 +27,6 @@ class _SearchFunctionState extends State<SearchFunction> {
       isLoading = true;
     });
     final String stringData = widget.hintText == "영화 검색"
-<<<<<<< HEAD:movie_moa/lib/screens/search_screen/movie_autocomplete.dart
         ? await rootBundle.loadString("assets/files/test.json")
         : await rootBundle.loadString("assets/non.json");
     //await rootBundle.loadString("assets/local.json");
@@ -42,13 +41,6 @@ class _SearchFunctionState extends State<SearchFunction> {
     for (int i = 0; i < json.length; i++) {
       jsonStringData.add(json[i]['name']);
     }
-    // final List<String> jsonStringData = json.cast<String>();
-=======
-        ? await rootBundle.loadString("assets/data.json")
-        : await rootBundle.loadString("assets/local.json");
-    final List<dynamic> json = jsonDecode(stringData);
-    final List<String> jsonStringData = json.cast<String>();
->>>>>>> fc55121a54fc54402a53f0afc2c5211ad9af99d9:movie_moa/lib/screens/search_screen/search_object_list.dart
 
     setState(() {
       isLoading = false;

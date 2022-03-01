@@ -1,12 +1,11 @@
-// import 'package:flutter/material.dart';
-// import 'package:movie_moa/screens/home/widgets/grey_grid.dart';
+import 'package:flutter/material.dart';
+import 'package:movie_moa/screens/home/widgets/grey_grid.dart';
 
-// class ToggleBrand extends StatefulWidget {
-//   @override
-//   _ToggleBrandState createState() => _ToggleBrandState();
-// }
+class ToggleBrand extends StatefulWidget {
+  @override
+  _ToggleBrandState createState() => _ToggleBrandState();
+}
 
-<<<<<<< HEAD
 class _ToggleBrandState extends State<ToggleBrand> {
   //final _OptionList = ['영화','장소', '시간'];
   final List<bool> _selections = List.generate(3, (index) => false);
@@ -93,7 +92,7 @@ class _ToggleBrandState extends State<ToggleBrand> {
     );
   }
 }
-=======
+
 // class _ToggleBrandState extends State<ToggleBrand> {
 //   //final _OptionList = ['영화','장소', '시간'];
 //   final List<bool> _selections = List.generate(3, (index) => false);
@@ -174,4 +173,4 @@ class _ToggleBrandState extends State<ToggleBrand> {
 //     );
 //   }
 // }
->>>>>>> fc55121a54fc54402a53f0afc2c5211ad9af99d9
+

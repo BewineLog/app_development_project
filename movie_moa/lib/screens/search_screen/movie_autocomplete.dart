@@ -54,7 +54,6 @@ class _SearchFunctionState extends State<SearchFunction> {
   /* @override
   void dispose() {
     focusNode.dispose();
-
     super.dispose();
   }*/
 
@@ -74,7 +73,7 @@ class _SearchFunctionState extends State<SearchFunction> {
                 child: CircularProgressIndicator(),
               )
             : Padding(
-                padding: const EdgeInsets.all(16.0),
+                padding: const EdgeInsets.all(6.0),
                 child: Column(
                   children: [
                     Autocomplete(
@@ -92,7 +91,7 @@ class _SearchFunctionState extends State<SearchFunction> {
                           (context, Function(String) onSelected, options) {
                         return Material(
                             child: ListView.separated(
-                          padding: EdgeInsets.zero,
+                          padding: EdgeInsets.all(8),
                           itemBuilder: (context, index) {
                             final option = options.elementAt(index);
                             return ListTile(
@@ -116,7 +115,6 @@ class _SearchFunctionState extends State<SearchFunction> {
                           movieName = selectedString.toString();
                           //search_word.add(selectedString.toString());
                         }
-                        print(selectedString);
                       },
                       fieldViewBuilder:
                           (context, controller, focusNode, onEditingComplete) {
@@ -128,15 +126,15 @@ class _SearchFunctionState extends State<SearchFunction> {
                           onEditingComplete: onEditingComplete,
                           decoration: InputDecoration(
                             border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(8),
+                              borderRadius: BorderRadius.circular(6),
                               borderSide: BorderSide(color: kGridColor),
                             ),
                             focusedBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(8),
+                              borderRadius: BorderRadius.circular(6),
                               borderSide: BorderSide(color: kGridColor),
                             ),
                             enabledBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(8),
+                              borderRadius: BorderRadius.circular(6),
                               borderSide: BorderSide(color: kGridColor),
                             ),
                             labelText: widget.hintText,

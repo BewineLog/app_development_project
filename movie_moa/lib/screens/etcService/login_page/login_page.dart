@@ -19,7 +19,7 @@ class _LoginScreenState extends State<LoginScreen> {
       children: [
         CustomAppBar(),
         Column(
-          children: (id_check & passwd_check)
+          children: (id_check && passwd_check)
               ? [loginSuccessScreen()]
               : [Body(id_check: id_check, passwd_check: passwd_check)],
         )

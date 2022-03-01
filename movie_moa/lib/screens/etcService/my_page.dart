@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-<<<<<<< HEAD
-=======
+
 import 'package:movie_moa/constants/colors.dart';
 import 'package:movie_moa/screens/etcService/login_page/login_page.dart';
->>>>>>> fc55121a54fc54402a53f0afc2c5211ad9af99d9
+
 import 'package:movie_moa/screens/etcService/widgets/profile_bar.dart';
 
 class MyPage extends StatelessWidget {

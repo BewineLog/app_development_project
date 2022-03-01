@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:movie_moa/component/already_have_an_account.dart';
-import 'package:movie_moa/component/login_check.dart';
 import 'package:movie_moa/component/rounded_button.dart';
 import 'package:movie_moa/component/rounded_input_field.dart';
 import 'package:movie_moa/component/rounded_password_field.dart';
@@ -68,6 +67,7 @@ class Body extends StatelessWidget {
                   Navigator.of(context).push(MaterialPageRoute(
                       builder: (context) => loginSuccessScreen()));
                 }
+                /*로그인 실패 시, 실패 pop up 필요*/
               },
             ),
             SizedBox(
