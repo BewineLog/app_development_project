@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:movie_moa/component/variable.dart';
 import 'package:movie_moa/constants/colors.dart';
+import 'package:movie_moa/screens/search_screen/widgets/crawler.dart';
 import 'package:substring_highlight/substring_highlight.dart';
 
 class SearchFunction extends StatefulWidget {
@@ -50,8 +51,8 @@ class _SearchFunctionState extends State<SearchFunction> {
       autoCompleteData = jsonStringData;
     });
   }
-
-  /* @override
+  /*
+  @override
   void dispose() {
     focusNode.dispose();
     super.dispose();
@@ -59,8 +60,8 @@ class _SearchFunctionState extends State<SearchFunction> {
 
   @override
   void initState() {
-    super.initState();
     fetchAutoCompleteData();
+    super.initState();
   }
 
   @override
@@ -82,7 +83,8 @@ class _SearchFunctionState extends State<SearchFunction> {
                           return searchHistory_;
                           //return search_word;
                         } else {
-                          return autoCompleteData.where((word) => word
+                          //return autoCompleteData.where((word) => word
+                          return crawlingData.where((word) => word
                               .toLowerCase()
                               .contains(textEditingValue.text.toLowerCase()));
                         }

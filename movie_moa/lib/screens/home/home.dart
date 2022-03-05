@@ -1,7 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:movie_moa/screens/MovieList/data.dart';
 
-import 'package:movie_moa/screens/MovieList/current_movie.dart';
+//import 'package:movie_moa/screens/MovieList/current_movie.dart';
 
 import 'package:movie_moa/screens/etcService/my_page.dart';
 import 'package:movie_moa/screens/home/widgets/home_service.dart';
@@ -52,7 +53,7 @@ class _HomePageState extends State<HomePage> {
             page = CupertinoTabView(
               builder: (context) {
                 return CupertinoPageScaffold(
-                    child: Movielist()); /*홈페이지 서비스 기본 페이지 코드*/
+                    child: movieList()); /*홈페이지 서비스 기본 페이지 코드*/
               },
             );
             break;
