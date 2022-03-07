@@ -2,12 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:movie_moa/constants/colors.dart';
 import 'package:movie_moa/screens/home/widgets/grey_grid.dart';
 import 'package:movie_moa/screens/search_screen/location_input.dart';
-import 'package:movie_moa/screens/search_screen/search_object_list.dart';
+import 'package:movie_moa/screens/search_screen/widgets/crawler.dart';
 // import 'package:movie_moa/screens/user_input_page/widgets/toggle_brand.dart';
 // import 'package:movie_moa/screens/user_input_page/widgets/confirm_button.dart';
 import 'package:movie_moa/screens/user_view_page/user_view_page.dart';
 import 'package:movie_moa/screens/user_view_page/widgets/upper_title.dart';
 import 'package:movie_moa/widgets/app_bar.dart';
+
+import '../search_screen/autocomplete.dart';
+//import '../search_screen/movie_autocomplete.dart';
 
 class userInputPage extends StatefulWidget {
   List<bool> option;
@@ -22,10 +25,12 @@ class _userInputPageState extends State<userInputPage> {
   late String _selectedTime1;
   late String _selectedTime2;
   final List<bool> _selections = List.generate(3, (index) => false);
+  Crawler c = Crawler();
   @override
   void initState() {
     _selectedTime1 = '시간을 설정해주세요';
     _selectedTime2 = '시간을 설정해주세요';
+    c.getData();
   }
 
   @override
@@ -49,13 +54,7 @@ class _userInputPageState extends State<userInputPage> {
               Container(
                 height: height * 0.135,
                 width: width,
-                child: Stack(
-                  children: [
-                    SearchFunction(
-                      hintText: "영화 검색",
-                    ),
-                  ],
-                ),
+                child: AutocompleteFunc(),
               ),
               //SearchScreen(),
               grey_grid(),

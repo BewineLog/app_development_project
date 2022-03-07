@@ -1,10 +1,7 @@
 import 'dart:convert';
-
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:movie_moa/component/variable.dart';
 import 'package:movie_moa/constants/colors.dart';
-import 'package:movie_moa/screens/search_screen/widgets/crawler.dart';
 import 'package:substring_highlight/substring_highlight.dart';
 
 class SearchFunction extends StatefulWidget {
@@ -25,7 +22,7 @@ class _SearchFunctionState extends State<SearchFunction> {
   late Iterable<String> searchHistory;
   List<String> searchHistory_ = [];
 
-  Future fetchAutoCompleteData() async {
+  /*Future fetchAutoCompleteData() async {
     setState(() {
       isLoading = true;
     });
@@ -50,19 +47,13 @@ class _SearchFunctionState extends State<SearchFunction> {
       isLoading = false;
       autoCompleteData = jsonStringData;
     });
-  }
+  }*/
   /*
   @override
   void dispose() {
     focusNode.dispose();
     super.dispose();
   }*/
-
-  @override
-  void initState() {
-    fetchAutoCompleteData();
-    super.initState();
-  }
 
   @override
   Widget build(BuildContext context) {

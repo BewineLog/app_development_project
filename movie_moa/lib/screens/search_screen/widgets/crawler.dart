@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:http/http.dart' as http;
 import 'package:html/parser.dart';
 import 'package:movie_moa/component/variable.dart';
@@ -11,19 +13,27 @@ class Crawler {
   List<String> tmp = [];
 
   void getData() async {
-    final response = await http.get(Uri.parse(url));
-    final body = response.body;
-    final html = parse(body);
+    try {
+      final response = await http.get(Uri.parse(url), headers: {
+        //"Accept": "application/json",
+        //"Access-Control_Allow_Origin": "*"
+        "Content-Type": "text/plain",
+      });
+      final body = response.body;
+      final html = parse(body);
 
-    final htmlBody = html.querySelector(".list_tbl_box");
+      final htmlBody = html.querySelector(".list_tbl_box");
 
-    final data = htmlBody?.querySelector("tbody");
+      final data = htmlBody?.querySelector("tbody");
 
-    final dataMv = data?.querySelectorAll("th > a");
-    final dataTm = data?.querySelectorAll("td");
+      final dataMv = data?.querySelectorAll("th > a");
+      final dataTm = data?.querySelectorAll("td");
 
-    for (int i = 0; i < dataMv!.length; i++) {
-      crawlingData.add(dataMv[i].text);
+      for (int i = 0; i < dataMv!.length; i++) {
+        crawlingData.add(dataMv[i].text);
+      }
+    } catch (err) {
+      throw Exception(err);
     }
   }
 }

@@ -12,4 +12,4 @@ List<String> list = [
   'test2',
 ];
 
-List<String> crawlingData = [];
+List<String> crawlingData = []; // crawling data 임시 저장

@@ -4,9 +4,6 @@ import 'package:intl/intl.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:http/http.dart' as http;
 import 'package:movie_moa/constants/colors.dart';
-import 'package:movie_moa/screens/home/widgets/grey_grid.dart';
-import 'package:movie_moa/screens/user_view_page/widgets/upper_title.dart';
-import 'package:movie_moa/widgets/app_bar.dart';
 
 part 'data.g.dart';
 
