@@ -35,7 +35,8 @@ class _LocationInputState extends State<LocationInput> {
                     labelText: "현재 위치 입력",
                     filled: true,
                     fillColor: Colors.white,
-                    prefixIcon: Icon(Icons.map_outlined, color: Colors.grey),
+                    prefixIcon:
+                        const Icon(Icons.map_outlined, color: Colors.grey),
                     focusedBorder: OutlineInputBorder(
                         borderSide: BorderSide(color: Colors.grey),
                         borderRadius: BorderRadius.all(Radius.circular(6))),

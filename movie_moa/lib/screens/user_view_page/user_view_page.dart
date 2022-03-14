@@ -12,12 +12,13 @@ class User_View_Page extends StatelessWidget {
   String time1;
   String time2;
   int cnt;
-  User_View_Page({Key? key, 
-  required this.selection, 
-  required this.time1, 
-  required this.time2,
-  required this.cnt
-  }) : super(key: key);
+  User_View_Page(
+      {Key? key,
+      required this.selection,
+      required this.time1,
+      required this.time2,
+      required this.cnt})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +34,7 @@ class User_View_Page extends StatelessWidget {
           grey_grid(),
           Text('<설정된 조건>'),
           Text(selection.toString()),
-          Text(time1+'   '+time2),
+          Text(time1 + '   ' + time2),
           Text(cnt.toString()),
           // Find_more_info(), //더 많은 영화관 보기 구체적인 구현에 따라 달라질 예정
           // grey_grid(),

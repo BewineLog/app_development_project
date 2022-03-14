@@ -13,3 +13,6 @@ List<String> list = [
 ];
 
 List<String> crawlingData = []; // crawling data 임시 저장
+
+int adminId = 1111111111; //use DB admin id for movie rank
+int initId = adminId; //use DB admin id init value for movie rank

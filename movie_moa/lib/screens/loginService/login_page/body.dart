@@ -3,10 +3,10 @@ import 'package:movie_moa/component/already_have_an_account.dart';
 import 'package:movie_moa/component/rounded_button.dart';
 import 'package:movie_moa/component/rounded_input_field.dart';
 import 'package:movie_moa/component/rounded_password_field.dart';
-import 'package:movie_moa/screens/etcService/login_page/background.dart';
-import 'package:movie_moa/screens/etcService/login_success_page/login_success_page.dart';
+import 'package:movie_moa/screens/loginService/login_page/background.dart';
+import 'package:movie_moa/screens/loginService/login_success_page/login_success_page.dart';
 
-import 'package:movie_moa/screens/etcService/sign_up_page/sign_up_page.dart';
+import 'package:movie_moa/screens/loginService/sign_up_page/sign_up_page.dart';
 
 class Body extends StatelessWidget {
   String id = 'abc';

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:movie_moa/screens/etcService/login_page/login_page.dart';
+import 'package:movie_moa/screens/loginService/login_page/login_page.dart';
 
-import 'package:movie_moa/screens/etcService/login_success_page/login_success_page.dart';
+import 'package:movie_moa/screens/loginService/login_success_page/login_success_page.dart';
 import 'package:movie_moa/screens/home/home.dart';
 
-import 'package:movie_moa/screens/etcService/my_page.dart';
+import 'package:movie_moa/screens/loginService/my_page.dart';
 import 'package:movie_moa/component/variable.dart';
 
 class book_mark extends StatelessWidget {

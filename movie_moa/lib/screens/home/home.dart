@@ -1,10 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:movie_moa/screens/MovieList/data.dart';
+import 'package:movie_moa/screens/MovieList/movieList.dart';
 
 //import 'package:movie_moa/screens/MovieList/current_movie.dart';
 
-import 'package:movie_moa/screens/etcService/my_page.dart';
+import 'package:movie_moa/screens/loginService/my_page.dart';
 import 'package:movie_moa/screens/home/widgets/home_service.dart';
 
 class HomePage extends StatefulWidget {

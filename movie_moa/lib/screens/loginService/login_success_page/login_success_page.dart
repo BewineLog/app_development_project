@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:movie_moa/component/MultiSwitch.dart';
 import 'package:movie_moa/component/variable.dart';
-import 'package:movie_moa/screens/etcService/book_mark/book_mark.dart';
-import 'package:movie_moa/screens/etcService/detail_profile/detail_profile.dart';
+import 'package:movie_moa/screens/loginService/book_mark/book_mark.dart';
+import 'package:movie_moa/screens/loginService/detail_profile/detail_profile.dart';
 import 'package:movie_moa/screens/home/widgets/grey_grid.dart';
-import 'package:movie_moa/screens/etcService/widgets/profile_bar.dart';
+import 'package:movie_moa/screens/loginService/widgets/profile_bar.dart';
 
 class loginSuccessScreen extends StatefulWidget {
   const loginSuccessScreen({

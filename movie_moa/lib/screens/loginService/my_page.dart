@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 import 'package:movie_moa/constants/colors.dart';
-import 'package:movie_moa/screens/etcService/login_page/login_page.dart';
+import 'package:movie_moa/screens/loginService/login_page/login_page.dart';
 
-import 'package:movie_moa/screens/etcService/widgets/profile_bar.dart';
+import 'package:movie_moa/screens/loginService/widgets/profile_bar.dart';
 
 class MyPage extends StatelessWidget {
   const MyPage({Key? key}) : super(key: key);

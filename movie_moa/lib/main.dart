@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:movie_moa/screens/MovieList/data.dart';
 import 'package:movie_moa/screens/home/home.dart';
-//import 'package:movie_moa/screens/search_screen/search_screen.dart';
-import 'package:movie_moa/screens/user_input_page/user_input_page.dart';
-import 'package:movie_moa/screens/user_view_page/user_view_page.dart';
 
-void main() {
+void main() async {
   FutureBuilder.debugRethrowError = true;
+  WidgetsFlutterBinding.ensureInitialized();
+  fetchData(); //Ranking Data Fetch 후 DB 저장
   runApp(const MyApp());
 }
 
